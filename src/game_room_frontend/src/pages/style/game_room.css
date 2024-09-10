@@ -1,0 +1,153 @@
+.playerBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border: 3px solid black;
+    background-image: url('img/roomfloor.webp');
+    background-repeat: no-repeat; /* Fotoğrafın tekrar etmesini engeller */
+    background-size: cover; /* Fotoğrafın ekranın tamamını kaplamasını sağlar */
+    background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
+    background-position: center; /* Arka planın ortalanmasını sağlar */
+    height: 100vh;
+}
+
+
+.playerButton {
+    margin: 1rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.784) 80%, rgb(140, 135, 233) 100%);
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.262);
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.playerButton:hover {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.729) 80%, rgb(140, 135, 233) 100%);
+    transform: scale(1.1); /* Hover durumunda butonun büyüklüğü %110 olacak */
+}
+
+.floor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid rgba(255, 255, 255, 0.222);
+    box-shadow: 0px 0px 30px 0px rgb(0, 234, 255);
+    background-color: rgba(0, 0, 0, 0.348);
+    min-width: 70%;
+    border-radius: 10px;
+}
+
+
+/* Arka planı karartmak için overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Siyah, yarı saydam arka plan */
+    z-index: 999;
+}
+
+/* Aktif olan karakter kartını ön plana çıkar */
+.highlightedCard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ortalamak için */
+    z-index: 1000; /* Diğer her şeyin önünde görünmesi için */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Biraz gölge ekleyelim */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Diğer kartları karart */
+.dimmedCard {
+    opacity: 0.2;
+    pointer-events: none; /* Diğer kartlara tıklamayı engelle */
+}
+
+/* Aktif olan buton */
+.playerButton.activePlayer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ortalamak için */
+    z-index: 1000; /* Aktif buton üstte olacak */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Biraz gölge ekleyelim */
+    transition: all 0.3s ease-in-out;
+}
+
+.playingBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diceBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.diceItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.diceBox img.rolling {
+    transform: rotate(720deg); /* Zar 720 derece dönecek */
+}
+
+.diceLabel{
+    margin-bottom: 10px;
+}
+
+.dice{
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgb(106, 104, 104);
+    border-radius: 7px;
+    transition: transform 0.3s ease; /* Dönme veya sarsılma efekti */
+}
+
+.diceButton{
+    margin: 5px;
+    background-color: rgba(255, 253, 253, 0.113);
+    border: 2px solid rgb(101, 100, 100);
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    transition: transform 0.3s ease; /* Dönme veya sarsılma efekti */
+}
+
+.diceButton:hover{
+    background-color: rgba(21, 21, 21, 0.465);
+    color: white;
+}
+
+.condLabelBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.786);
+    margin: 1rem;
+    border-radius: 7px;
+    border: 2px solid white;
+}
+
+.condLabel{
+    font-weight: 600;
+    color: white;
+}

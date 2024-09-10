@@ -8,11 +8,23 @@
     "build": "npm run build --workspaces --if-present",
     "prebuild": "npm run prebuild --workspaces --if-present",
     "pretest": "npm run prebuild --workspaces --if-present",
-    "start": "npm start --workspaces --if-present",
+    "start": "react-scripts start",
     "test": "npm test --workspaces --if-present"
   },
   "type": "module",
   "workspaces": [
     "src/game_room_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/auth-client": "^1.4.0",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.5",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "localtunnel": "^2.0.2",
+    "openai": "^4.55.7",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-router-dom": "^6.24.0",
+    "styled-components": "^6.1.12"
+  }
 }
