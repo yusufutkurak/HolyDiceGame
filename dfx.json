@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "game_room_backend": {
+      "candid": "src/game_room_backend/game_room_backend.did",
+      "package": "game_room_backend",
+      "type": "rust"
+    },
+    "game_room_frontend": {
+      "dependencies": [
+        "game_room_backend"
+      ],
+      "source": [
+        "src/game_room_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "game_room_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
