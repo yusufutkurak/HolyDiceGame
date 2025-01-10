@@ -1,0 +1,270 @@
+
+/* Ana Konteyner */
+.game-room-container {
+    display: flex;
+    position: fixed; /* Ekrana sabitlenir */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Görünür ekran genişliği */
+    height: 100vh; /* Görünür ekran yüksekliği */
+    overflow: hidden; /* Taşan içerikler gizlenir */
+    margin: 0;
+    padding: 0;
+}
+/* Ana Konteyner (Arka Plan İçin) */
+.roomBackground {
+    width: 100vw; /* Tam genişlik */
+    height: 100vh; /* Tam yükseklik */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Taşan içerikleri gizle */
+    position: relative; /* Konteyner referans noktası */
+    background-size: cover; /* Resmi oranları koruyarak kapla */
+    background-position: center; /* Resmi ortala */
+    background-repeat: no-repeat; /* Resmin tekrar etmesini engelle */
+}
+
+.audio-controls{
+    position: absolute; /* Konumu parent'a göre ayarla */
+    margin-left: 420px;
+    top: 0; /* Üst kenara hizala */
+    left: 0; /* Sol kenara hizala */
+    z-index: 10; /* Diğer elemanların üstünde olacak şekilde z-index ayarla */
+    padding: 10px;
+}
+.game-room-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.game-zone{
+    margin-top: 50px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.185);
+    width: 100vw;
+    height: 800px;
+}
+
+.chatBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+.chat-messages {
+    display: flex; /* Flexbox düzeni */
+    flex-direction: column; /* Dikey hizalama */
+    justify-content: space-between; /* İçerikler arasında boşluk bırak */
+    background: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+    height: 340px; /* Ekranın tamamını kapla */
+    width: 600px;
+    overflow: hidden; /* Taşan içerikleri gizle */
+    color: white;
+}
+
+/* Chat Input Kutusu */
+.chat-input {
+    display: flex;
+    gap: 2px;
+    border-top: 1px solid #cccccc34; /* Üst çizgi */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    position: sticky; /* Sayfanın altına sabitle */
+    bottom: 0; /* Sayfanın en altına yapışık */
+    z-index: 10;
+}
+
+.sendButton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.message-input{
+    width: 440px;
+    height: 30px;
+    background: none; /* Yarı saydam arka plan */
+    border: none;
+    color: white;
+}
+
+.name-input{
+    width: 110px;
+    background: none; /* Yarı saydam arka plan */
+    border-right: 1px solid white;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    color: white;
+}
+
+/* Sohbet Mesajı Satırları */
+.chat-messages ul {
+    list-style: none; /* Liste işaretlerini kaldırır */
+    padding: 0; /* Varsayılan iç boşluğu kaldırır */
+    margin: 0; /* Varsayılan dış boşluğu kaldırır */
+}
+
+.chat-messages li {
+    margin: 5px 0; /* Liste öğeleri arasında boşluk bırakır */
+    font-size: 14px; /* Yazı boyutunu ayarlar */
+}
+
+.textContentBox{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Ana Konteyner (Textarea Kutusu) */
+.dmStoryBox {
+    width: 400px; /* Sabit genişlik */
+    height: 315px; /* Sabit yükseklik */
+    margin-left: 150px; /* Ortala */
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid #cccccc83; /* Çerçeve */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Textarea Ayarları */
+.dmTextArea {
+    width: 100%; /* Konteynerin tamamını kapla */
+    height: 100%; /* Konteynerin tamamını kapla */
+    resize: none; /* Kullanıcının yeniden boyutlandırmasını engelle */
+    border: none; /* Kenarlık kaldır */
+    outline: none; /* Odaklandığında dış çizgi kaldır */
+    font-size: 18px;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    box-sizing: border-box; /* Padding dahil genişlik ve yükseklik hesapla */
+    background-color: transparent; /* Konteyner arka planını kullan */
+}
+
+.dmLabel{
+    color: white;
+    border-right: 1px solid white;
+}
+
+.dmSettingsBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.285);
+    background-color: rgba(0, 0, 0, 0.728);
+}
+
+.bgSet{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.bgButton{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+}
+
+.bgButton:hover{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: rgb(133, 133, 133);
+}
+
+.miniBg{
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.miniBgImg{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+
+}
+
+.musicSet{
+    display: flex;
+    flex-direction: row;
+}
+
+.setButton{
+    background-color: rgba(0, 0, 0, 0.644);
+    border: 2px solid rgba(255, 255, 255, 0.779);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 9px;
+}
+
+.setButton:hover{
+    background-color: rgba(43, 43, 43, 0.644);
+    border: 2px solid rgba(255, 255, 255, 0.779);
+}
+
+.miniMusic{
+    padding: 1rem;
+    color: white;
+}
+
+.micButton{
+    background-color: rgba(245, 222, 179, 0);
+    
+    border: none;
+    color: white;
+}
+
+.micButton:hover{
+    background-color: rgba(255, 255, 255, 0.282);
+}
+
+.connectMicButton{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.553);
+}
+
+.connectMicButton:hover{
+    background-color: rgba(255, 255, 255, 0.282);
+}
+
+.audioButtons {
+    display: flex;
+}
+
+.nftCardGame{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 2px solid black;
+    background-color: #4f4f4f57;
+    border-radius: 8px;
+    width: 750;
+}
+
+.imgFrameGame{
+    display: flex;
+    margin-top: 5px;
+    margin-right: 1rem;
+    width: 130px;
+    height: 130px;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(82, 82, 82);
+    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+}
+
+.characterImgGame{
+    display: flex;
+    border-radius: 7px;
+    width: 96%;
+}

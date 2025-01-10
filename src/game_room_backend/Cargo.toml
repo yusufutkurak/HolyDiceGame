@@ -9,6 +9,23 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-candid = "0.10"
-ic-cdk = "0.16"
-ic-cdk-timers = "0.10" # Feel free to remove this dependency if you don't need timers
+candid = "0.10.10"
+ic-cdk = "0.15.1"
+ic-cdk-timers = "0.9.0"  # Kaldırılabilir
+lazy_static = "1.4.0"
+ic-cdk-macros = "0.15.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_derive = "1.0"
+serde_json = "1"
+ic-websocket-cdk = "0.4.0"
+resize = "0.8.7"
+jpeg-decoder = "0.3.1"
+jpeg-encoder = "0.6.0"
+png = "0.17.3"
+
+[profile.release]
+opt-level = "z"       # Optimize for size
+lto = true            # Link Time Optimization
+codegen-units = 1     # Tek bir işlem birimi kullan
+panic = "abort"       # Hata ayıklama bilgilerini devre dışı bırak
+strip = "symbols"     # Gereksiz sembolleri kaldır

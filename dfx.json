@@ -3,7 +3,8 @@
     "game_room_backend": {
       "candid": "src/game_room_backend/game_room_backend.did",
       "package": "game_room_backend",
-      "type": "rust"
+      "type": "rust",
+      "http_requests": true
     },
     "game_room_frontend": {
       "dependencies": [
@@ -13,7 +14,11 @@
         "src/game_room_frontend/dist"
       ],
       "type": "assets",
-      "workspace": "game_room_frontend"
+      "workspace": "game_room_frontend",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; connect-src 'self' http://localhost:* https://icp0.io https://*.icp0.io https://icp-api.io https://ic0.app wss://gateway.icws.io"
+      }
+      
     }
   },
   "defaults": {

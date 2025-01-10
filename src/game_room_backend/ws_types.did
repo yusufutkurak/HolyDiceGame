@@ -1,0 +1,143 @@
+type UserStatus = record {
+    user_id: text;
+    ready: bool;
+    // ClientPrincipal tipi Candid'de principal olarak temsil edilir
+    client_principal: principal;
+};
+
+type AppContent = variant {
+    Join: record { roomId: text; user_id: text; ready: bool };
+    Leave: record { roomId: text; user_id: text };
+    UserList: record { users: vec UserStatus };
+    Character: record {
+        character_name: text;
+        abilitys: vec AbilityType;
+        character_class: text;
+        character_race: text;
+        user_id: text;
+        character_id: int32;
+        ready: bool;
+    };
+    Dont: record {
+      message: text;
+    };
+
+    Chat: record {
+      message: text;
+      color: text;
+      name: text;
+    };
+
+    Offer: record{
+        user_id: text;
+        target_id: text;
+        sdp: text;
+    };
+    Answer: record {
+        user_id: text;
+        target_id: text;
+        sdp: text;
+    };
+    IceCandidate: record {
+        user_id: text;
+        target_id: text;
+        candidate: text;
+    };
+    Play: record {
+        music: text;
+    };
+    DmNote: record {
+        message: text;
+    };
+    Stop: record {
+      message: text;
+    };
+    Background: record {
+      message: text;
+    };
+};
+
+type AbilityType = record {
+    key: text;
+    value: int32;
+};
+
+type AppMessage = record {
+    message_type: text;
+    content: AppContent;
+    timestamp: nat64;
+};
+// IC WebSocket types
+type ClientPrincipal = principal;
+type GatewayPrincipal = principal;
+type ClientKey = record {
+  client_principal : ClientPrincipal;
+  client_nonce : nat64;
+};
+
+type WebsocketMessage = record {
+  client_key : ClientKey;
+  sequence_num : nat64;
+  timestamp : nat64;
+  is_service_message : bool;
+  content : blob;
+};
+
+type CanisterOutputMessage = record {
+  client_key : ClientKey;
+  key : text;
+  content : blob;
+};
+
+type CanisterOutputCertifiedMessages = record {
+  messages : vec CanisterOutputMessage;
+  cert : blob;
+  tree : blob;
+  is_end_of_queue : bool;
+};
+
+type CanisterWsOpenArguments = record {
+  client_nonce : nat64;
+  gateway_principal : GatewayPrincipal;
+};
+
+type CanisterWsOpenResult = variant {
+  Ok : null;
+  Err : text;
+};
+
+type CanisterWsCloseArguments = record {
+  client_key : ClientKey;
+};
+
+type CanisterWsCloseResult = variant {
+  Ok : null;
+  Err : text;
+};
+
+type CanisterWsMessageArguments = record {
+  msg : WebsocketMessage;
+};
+
+type CanisterWsMessageResult = variant {
+  Ok : null;
+  Err : text;
+};
+
+type CanisterWsGetMessagesArguments = record {
+  nonce : nat64;
+};
+
+type CanisterWsGetMessagesResult = variant {
+  Ok : CanisterOutputCertifiedMessages;
+  Err : text;
+};
+
+service : {
+  "ws_open" : (CanisterWsOpenArguments) -> (CanisterWsOpenResult);
+  "ws_close" : (CanisterWsCloseArguments) -> (CanisterWsCloseResult);
+  "ws_message" : (CanisterWsMessageArguments, opt AppMessage) -> (CanisterWsMessageResult);
+  "ws_get_messages" : (CanisterWsGetMessagesArguments) -> (CanisterWsGetMessagesResult) query;
+  
+  "send_webrtc_message" : (user_id: text, target_id: text, message_type: text, content: text) -> ();
+};

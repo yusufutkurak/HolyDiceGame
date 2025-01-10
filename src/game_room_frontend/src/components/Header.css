@@ -1,0 +1,318 @@
+/* Header.css */
+
+.navbar {
+  background-color: #1a1a1a; /* Koyu arka plan */
+  z-index: 1;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Georgia', serif; /* Klasik bir font */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Daha yoğun bir gölge */
+  position: relative;
+}
+
+.navbar-logo {
+  color: #ffffff; /* Morumsu-kırmızı ton */
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Hafif gölge efekti */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+#home-link {
+  margin-right: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 5px;
+  position: relative;
+}
+
+#home-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+#home-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+#home-link:hover {
+  background-color: transparent;
+  transform: translateY(-2px); /* Hover'da hafif bir yükselme efekti */
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 5px;
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  background-color: transparent;
+  transform: translateY(-2px); /* Hover'da hafif bir yükselme efekti */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s, transform 0.3s;
+  border-radius: 5px;
+  position: relative;
+}
+
+.dropbtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.dropbtn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.dropbtn:hover {
+  color: #a239ca; /* Morumsu-kırmızı hover efekti */
+  transform: translateY(-2px); /* Hover'da hafif bir yükselme efekti */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333333; /* Koyu gri arka plan */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5); /* Hafif gölge efekti */
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.3s, padding-left 0.3s;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-content a:hover {
+  background-color: #444444; /* Daha koyu arka plan */
+  padding-left: 20px; /* Hover'da hafif bir sağa kayma efekti */
+  border-left: 3px solid #a239ca; /* Sol kenarda morumsu-kırmızı */
+}
+
+.show {
+  display: block;
+}
+
+.arrow-down {
+  margin-left: 5px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: border-color 0.3s;
+}
+
+.dropbtn:hover .arrow-down {
+  border-color: #a239ca; /* Morumsu-kırmızı ok rengi */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+      display: none;
+  }
+
+  .navbar {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .dropdown {
+      width: 100%;
+  }
+
+  .dropbtn {
+      width: 100%;
+      text-align: left;
+  }
+
+  .dropdown-content {
+      width: 100%;
+  }
+
+  .navbar-links.show {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .nav-link {
+      margin: 10px 0;
+      font-size: 20px;
+  }
+
+  #home-link {
+      margin: 10px 0;
+      font-size: 20px;
+  }
+}
+
+/* Footer.css */
+/* Footer.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sayfanın tamamının yüksekliğini kapsar */
+}
+
+.main-content {
+  flex: 1; /* Footer'ı aşağıya iter, içerik azsa boşluğu doldurur */
+}
+
+.footer {
+  background-color: #1a1a1a;
+  z-index: -1;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative; /* Absolute yerine relative kullanılır */
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0; /* Footer'ın küçülmesini engeller */
+}
+
+
+.footer-section {
+  flex: 1;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.footer h4 {
+  color: rgba(255, 255, 255, 0.85); /* Beyazımsı başlık */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer label, a {
+  display: block;
+  color: rgba(255, 255, 255, 0.75); /* Beyazımsı metin */
+  margin-bottom: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer-section h4, .footer-section label {
+  margin: 5px 0;
+}
+
+.footer-section:last-child {
+  text-align: right;
+}
+
+
+
+.main-content {
+  flex: 1; /* Ana içerik alanı footer'dan önce gelir */
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-section:last-child {
+    text-align: center;
+  }
+}

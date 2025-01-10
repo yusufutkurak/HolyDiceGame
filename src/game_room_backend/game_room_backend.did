@@ -1,3 +1,110 @@
+import "./ws_types.did";
+
+// Player Character and Game Room related types
+type PlayerCharacter = record {
+    user_id: text;
+    player_id: int32;
+    character: Character;
+    condition: opt text;
+    hp: opt int32;
+    xp: opt int32;
+    saving: opt int32;
+};
+
+type GameRoom = record {
+    room_id: text;
+    dm_id: text;
+    players: vec text;
+    characters: opt vec PlayerCharacter;
+};
+
+// Diğer tip tanımlamaları
+type Ability = record {
+    strength: int32;
+    dexterity: int32;
+    constitution: int32;
+    intelligence: int32;
+    wisdom: int32;
+    charisma: int32;
+};
+
+type Character = record {
+    id: int32;
+    avatar: opt blob;
+    name: text;
+    race: text;
+    classes: text;
+    abilitys: Ability;
+};
+
+type CharacterInfo = record {
+    id: int32;
+    name: text;
+};
+
+
+type User = record {
+    userId: text;
+    userName: text;
+    images: vec vec nat8;
+    characters: vec Character;
+    balance: int32;
+};
+
+type Nft = record {
+    id: int32;
+    owner: text;
+    character: Character;
+};
+
+type CustomHttpHeader = record {
+    name: text;
+    value: text;
+};
+
+type CustomHttpResponse = record {
+    status: nat;
+    headers: vec CustomHttpHeader;
+    body: blob;
+};
+
 service : {
-    "greet": (text) -> (text) query;
+    "add_room": (text, text, vec text) -> ();
+    "add_room_player_character": (PlayerCharacter, text) -> ();
+    "get_room": (text) -> (opt GameRoom) query;
+    "remove_room": (text) -> ();
+    "create_user": (text) -> ();
+    "get_user": (text) -> (opt User) query;
+    "get_username": (text) -> (text) query;
+    "update_user": (text, text) -> ();
+    "whoami": () -> (principal) query;
+    "user_control": (text) -> (bool) query;
+    "save_character": (text, text, text, Ability, text) -> (); 
+    "list_characters": () -> (vec Character) query;
+    "list_character_names": () -> (vec CharacterInfo) query;
+    "add_image": (text) -> ();
+    "count_characters": () -> (int32) query;
+    "get_character_by_id": (int32) -> (opt Character);
+    "get_character_by_user_id": (int32, text) -> (opt Character);
+    "ws_open" : (CanisterWsOpenArguments) -> (CanisterWsOpenResult);
+    "ws_close" : (CanisterWsCloseArguments) -> (CanisterWsCloseResult);
+    "ws_message" : (CanisterWsMessageArguments, opt AppMessage) -> (CanisterWsMessageResult);
+    "ws_get_messages" : (CanisterWsGetMessagesArguments) -> (CanisterWsGetMessagesResult) query;
+    "decrease_balance" : () -> ();
+    "increase_balance" :() -> ();
+    "get_balance" : () -> (opt int32) query;
+
+    "add_room_player" : (text, text) -> ();
+
+    "mint_character_nft" : (Character) -> (int32);
+    "get_nft_collection" : () -> (vec Nft) query;
+    "transfer" : (principal, int32) -> (bool);
+    "handle_options": () -> (CustomHttpResponse);
+    "handle_request": (text) -> (CustomHttpResponse);
+
+    "upload_image_to_cloudinary": (text) -> (variant { Ok: text; Err: text });
+    "fetch_image_from_cloudinary": (text) -> (variant { Ok: vec nat8; Err: text });
+
+
 }
+

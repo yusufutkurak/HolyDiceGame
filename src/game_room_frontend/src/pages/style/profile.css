@@ -1,0 +1,104 @@
+/* Load Cinzel font specifically for this page */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Apply the Cinzel font only to this component */
+.user-profile {
+    font-family: 'Cinzel', serif;
+}
+
+/* Full page wrapper for background image */
+.user-profile__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Make sure it's behind the form */
+}
+
+/* Center the form container */
+.user-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Fantasy-themed form styling */
+.user-profile__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    border: 2px solid #cc73ff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    max-width: 90%;
+    color: #fdd5d5;
+}
+
+/* Labels */
+.user-profile__label {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fdf0d5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-shadow: 1px 1px #000;
+}
+
+/* Input fields */
+.user-profile__input {
+    width: 93%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #ac5fe2;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #332c22;
+    background-color: #ffffffdc;
+    transition: border-color 0.3s ease;
+}
+
+/* Input hover effect */
+.user-profile__input:focus {
+    border-color: #cfe4f5;
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Button with medieval game-style look */
+.user-profile__button {
+    background-color: #b983ee40;
+    color: #fdf0d5;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: 2px solid #f1d1d1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-shadow: 1px 1px #000;
+    width: 100%;
+}
+
+.user-profile__button:hover {
+    background-color: #b883eed1;
+    transform: scale(1.05);
+}
+
+/* Error message styling */
+.user-profile__error {
+    color: #f53b3b;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-shadow: 1px 1px #000;
+}
