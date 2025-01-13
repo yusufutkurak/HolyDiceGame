@@ -1,61 +1,72 @@
-# `game_room`
+# Holy Dice
 
-Welcome to your new `game_room` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Holy Dice is a decentralized platform that combines the magic of Dungeons and Dragons (DnD) with the power of blockchain technology and artificial intelligence. It offers players an immersive, secure, and community-driven gameplay experience.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+![NJm_Tj6q_400x400](https://github.com/user-attachments/assets/403592be-2cd0-4fc0-a5e0-f59cd197bfda)
+---
 
-To learn more before you start working with `game_room`, see the following documentation available online:
+## 🎮 Features
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
+### **1. AI-Driven Character Creation**
+- Players can create unique and vibrant character cards using AI technology.
+- Customizable visual and narrative features allow users to personalize their characters.
+- Fast generation time ensures a seamless and engaging character creation process.
 
-If you want to start working on your project right away, you might want to try the following commands:
+### **2. Blockchain Integration**
+- Immutable storage for character NFTs and in-game assets ensures security and transparency.
+- NFTs are minted and stored on the blockchain, giving players true ownership of their characters and assets.
+- Integration with Plug Wallet enables players to manage their digital assets seamlessly.
 
-```bash
-cd game_room/
-dfx help
-dfx canister --help
-```
+### **3. Real-Time Communication**
+- **IC-WebSocket Integration**: Provides low-latency, real-time interactions for players.
+- **Voice Chat**: High-quality real-time communication for an immersive gameplay experience.
+- **Text Chat**: A built-in chat feature allows players to collaborate and strategize effectively.
 
-## Running the project locally
+### **4. Dynamic Gameplay Enhancements**
+- **Background Theme Updates**: The game environment dynamically changes based on the story progression.
+- **Adaptive Music Integration**: Story-driven music adapts to the game\u2019s narrative, enhancing the atmosphere.
+- **GM Note Sharing**: A Game Master (GM) can write story notes in a dedicated box, instantly shared with players via WebSocket.
 
-If you want to test your project locally, you can use the following commands:
+### **5. Community Engagement**
+- Players can share, vote, and interact with community-created characters.
+- Regular contests and events keep the community engaged and incentivized.
+- Governance tools enable community-driven decision-making.
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
+---
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+## 🔗 Links
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+- **Live Demo**: [Visit the Platform](https://holydice.example.com)
+- **Documentation**: [Project Docs](https://docs.holydice.example.com)
+- **Twitter**: [@HolyDiceRPG](https://twitter.com/HolyDiceRPG)
+- **GitHub Repository**: [Holy Dice](https://github.com/username/holydice)
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+---
 
-```bash
-npm run generate
-```
+## 📊 Milestones
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+### **Initial Development**
+- Set up the foundational architecture of the platform.
+- Integrated blockchain technology with the Internet Computer Protocol (ICP).
+- Implemented a prototype for AI-driven character creation.
 
-If you are making frontend changes, you can start a development server with
+### **Feature Completion and Deployment**
+- Optimized IC-WebSocket for low-latency interactions.
+- Enabled voice and text chat for seamless communication during gameplay.
+- Implemented real-time background and music updates tied to the game\u2019s narrative.
+- Deployed a fully functional NFT system for character creation and management.
+- Integrated Plug Wallet for secure asset ownership and accessibility.
 
-```bash
-npm start
-```
+### *Community Engagement and Expansion**
+- Established a social media presence with 1,000+ Twitter followers.
+- Launched events and contests to drive community interaction.
+- Implemented tools for sharing and voting on user-created characters.
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+---
+<img width="1361" alt="Ekran Resmi 2025-01-13 15 25 04" src="https://github.com/user-attachments/assets/90ea2b7f-d00c-46fd-974a-9c8d5a2e76b4" />
 
-### Note on frontend environment variables
+<img width="816" alt="Ekran Resmi 2025-01-13 15 25 13" src="https://github.com/user-attachments/assets/ae265507-53fe-46bf-9ec2-6b6254f13a82" />
 
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
 
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+
+
