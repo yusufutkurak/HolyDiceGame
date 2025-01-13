@@ -36,7 +36,7 @@ Holy Dice is a decentralized platform that combines the magic of Dungeons and Dr
 
 ## 🔗 Links
 
-- **Live Demo**: [Visit the Platform]([https://holydice.example.com](https://lufj5-qiaaa-aaaan-qzquq-cai.icp0.io/)
+- **Live Demo**: [Visit the Platform](https://lufj5-qiaaa-aaaan-qzquq-cai.icp0.io/)
 - **Twitter**: [@HolyDiceGame](https://x.com/HolyDiceGame)
 
 ---
