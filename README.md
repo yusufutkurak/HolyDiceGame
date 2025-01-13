@@ -55,11 +55,6 @@ Holy Dice is a decentralized platform that combines the magic of Dungeons and Dr
 - Deployed a fully functional NFT system for character creation and management.
 - Integrated Plug Wallet for secure asset ownership and accessibility.
 
-### *Community Engagement and Expansion**
-- Established a social media presence with 1,000+ Twitter followers.
-- Launched events and contests to drive community interaction.
-- Implemented tools for sharing and voting on user-created characters.
-
 ---
 <img width="1361" alt="Ekran Resmi 2025-01-13 15 25 04" src="https://github.com/user-attachments/assets/90ea2b7f-d00c-46fd-974a-9c8d5a2e76b4" />
 
